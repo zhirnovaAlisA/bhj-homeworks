@@ -1,4 +1,4 @@
-const button = document.querySelector(".dropdown");
+const button = document.querySelector(".dropdown__value");
 const list = document.querySelector(".dropdown__list");
 const languages = Array.from(document.querySelectorAll(".dropdown__link"));
 const currentLanguage = document.querySelector(".dropdown__value");
