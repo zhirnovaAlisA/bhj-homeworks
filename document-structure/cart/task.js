@@ -33,9 +33,11 @@ for (let button of Array.from(buttons)){
             newElement.className = "cart__product";
             newElement.dataset.id = currentProductId;
             newElement.textContent = `${currentQuantity}`;
-            newElement.innerHTML = `
-            <div class="cart__product-count">${currentQuantity}</div>
-            <img class="cart__product-image src = "${productImageSrc}">`
+            newElement.innerHTML = `<div class="cart__product-count">${currentQuantity}</div>`
+            let productImage = document.createElement("img");
+            productImage.className = "cart__product-image";
+            productImage.src = productImageSrc;
+            newElement.appendChild(productImage);
             buttonProducts.appendChild(newElement);
         }
         else{
