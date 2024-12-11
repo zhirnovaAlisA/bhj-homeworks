@@ -1,8 +1,10 @@
-document.addEventListener('keydown', function(event) {
+const addButton = document.querySelector(".tasks__add");
+console.log(addButton);
+addButton.addEventListener('click', function(event) {
     const currentTitle = document.querySelector(".tasks__input");
-    
-    if ((event.code === 'Enter') && (currentTitle.value !== "")) {
-        event.preventDefault();
+    event.preventDefault();
+
+    if (currentTitle.value.trim() !== "") {
         const tasksList = document.querySelector(".tasks__list");
 
         let newTask = document.createElement("div");
