@@ -4,7 +4,13 @@ for (let tip of tipElements) {
     tip.addEventListener("click", (event) => {
         event.preventDefault();
 
-        document.querySelectorAll('.tooltip').forEach(el => el.remove());
+        let currentTipText = document.querySelector(".tooltip");
+        let thisTipText = tip.title;
+
+        if (currentTipText?.textContent === thisTipText){
+            console.log("повторное нажатие");
+            currentTipText.classList.toggle("tooltip");
+        }else{
 
         const tooltipElement = document.createElement("div");
         tooltipElement.className = "tooltip";
@@ -17,6 +23,7 @@ for (let tip of tipElements) {
         document.body.appendChild(tooltipElement);
 
         tooltipElement.classList.add("tooltip_active");
+        }
     });
 }
 
